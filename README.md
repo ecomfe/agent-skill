@@ -28,3 +28,4 @@ Detailed description and usage instructions.
 ### Available Skills
 
 - **hello**: A template skill example
+- **taro2rn**: Convert TaroJS code to React Native with automatic transform rules and guided conversion workflow
