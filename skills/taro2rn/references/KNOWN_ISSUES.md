@@ -42,9 +42,14 @@ import LinearGradient from 'react-native-linear-gradient';
 </LinearGradient>;
 ```
 
-**渐变方向映射：** | CSS 方向 | RN start | RN end | |---------|----------|--------| | to left | {x:
-1, y: 0} | {x: 0, y: 0} | | to right | {x: 0, y: 0} | {x: 1, y: 0} | | to top | {x: 0, y: 1} | {x:
-0, y: 0} | | to bottom | {x: 0, y: 0} | {x: 0, y: 1} |
+**渐变方向映射：**
+
+| CSS 方向 | RN start | RN end |
+|---------|----------|--------|
+| to left | {x: 1, y: 0} | {x: 0, y: 0} |
+| to right | {x: 0, y: 0} | {x: 1, y: 0} |
+| to top | {x: 0, y: 1} | {x: 0, y: 0} |
+| to bottom | {x: 0, y: 0} | {x: 0, y: 1} |
 
 ---
 
@@ -71,20 +76,10 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 
 ---
 
-### 1.3 react-native-date-picker
+### 1.3 @quidone/react-native-wheel-picker
 
-**问题描述：** Taro 的 `Picker mode="date"` 或第三方 UI 库的日期选择器
-在 RN 中没有直接对应组件。官方 `@react-native-community/datetimepicker`
-iOS/Android 样式差异大，无法保持跨平台一致的滚轮体验。
-
-**解决方案：** 使用 `react-native-date-picker` 实现统一的跨平台日期选择器
-
-**使用场景：** 日期选择器（PickerDate）
-
-### 1.4 @quidone/react-native-wheel-picker
-
-**问题描述：** 第三方 UI 库的 Picker
-组件在 RN 中没有直接替代。需要实现支持多列联动的滚轮选择器（如省市区三级联动）。
+**问题描述：**
+第三方 UI 库的 Picker 组件在 RN 中没有直接替代。需要实现支持多列联动的滚轮选择器（如省市区三级联动）。
 
 **解决方案：** 使用 `@quidone/react-native-wheel-picker` 实现跨平台滚轮选择器
 
@@ -112,17 +107,23 @@ import {WheelPicker} from '@quidone/react-native-wheel-picker';
 </WheelPicker>;
 ```
 
-**常用属性：** | 属性 | 类型 | 说明 | |------|------|------| | `value` | `number` | 当前选中索引 | |
-`onValueChanging` | `(index: number) => void` | 滚动变化回调 | | `itemHeight` | `number`
-| 每项高度 | | `visibleCount` | `number` | 可见项数量 | | `itemTextStyle` | `TextStyle` | 文本样式 |
+**常用属性：**
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `value` | `number` | 当前选中索引 |
+| `onValueChanging` | `(index: number) => void` | 滚动变化回调 |
+| `itemHeight` | `number` | 每项高度 |
+| `visibleCount` | `number` | 可见项数量 |
+| `itemTextStyle` | `TextStyle` | 文本样式 |
 
 ---
 
-### 1.5 react-native-date-picker
+### 1.4 react-native-date-picker
 
-**问题描述：** 日期选择器需要跨平台一致的滚轮体验。
+**问题描述：** Taro 的 `Picker mode="date"` 或第三方日期选择器在 RN 中无直接对应。官方 `@react-native-community/datetimepicker` iOS/Android 样式差异大。
 
-**解决方案：** 使用 `react-native-date-picker`
+**解决方案：** 使用 `react-native-date-picker` 实现跨平台一致的滚轮体验
 
 ```bash
 pnpm add react-native-date-picker
@@ -149,11 +150,17 @@ import DatePicker from 'react-native-date-picker';
 />;
 ```
 
-**常用属性：** | 属性 | 类型 | 说明 | |------|------|------| | `date` | `Date` | 当前选中日期 | |
-`onDateChange` | `(date: Date) => void` | 日期变化回调 | | `mode` | `'date' \| 'time' \| 'datetime'`
-| 选择器模式 | | `locale` | `string` | 语言区域（如 'zh'） | | `minimumDate` | `Date`
-| 最小可选日期 | | `maximumDate` | `Date` | 最大可选日期 | | `androidVariant` |
-`'iosClone' \| 'nativeAndroid'` | Android 样式风格 |
+**常用属性：**
+
+| 属性 | 类型 | 说明 |
+|------|------|------|
+| `date` | `Date` | 当前选中日期 |
+| `onDateChange` | `(date: Date) => void` | 日期变化回调 |
+| `mode` | `'date' \| 'time' \| 'datetime'` | 选择器模式 |
+| `locale` | `string` | 语言区域（如 'zh'） |
+| `minimumDate` | `Date` | 最小可选日期 |
+| `maximumDate` | `Date` | 最大可选日期 |
+| `androidVariant` | `'iosClone' \| 'nativeAndroid'` | Android 样式风格 |
 
 ---
 
@@ -407,8 +414,7 @@ RN 不支持 Web/小程序的 `IntersectionObserver` API，需要替代方案实
 />
 ```
 
-**优点：** 官方推荐，性能优化好
-**缺点：** 仅适用于 FlatList，复杂布局不适用
+**优点：** 官方推荐，性能优化好 **缺点：** 仅适用于 FlatList，复杂布局不适用
 
 ---
 
@@ -597,8 +603,13 @@ import {BlurView} from '@react-native-community/blur';
 </BlurView>;
 ```
 
-**平台差异：** | 特性 | iOS | Android | |------|-----|---------| | blurAmount 最大值 | 无限制 | 32 |
-| VibrancyView | ✅ 支持 | ❌ 不支持 | | 性能 | 优秀 | 良好 |
+**平台差异：**
+
+| 特性 | iOS | Android |
+|------|-----|---------|
+| blurAmount 最大值 | 无限制 | 32 |
+| VibrancyView | 支持 | 不支持 |
+| 性能 | 优秀 | 良好 |
 
 **blurType 选项：** `light`, `dark`, `xlight`, `prominent`, `regular`
 
@@ -702,7 +713,10 @@ resolver: {
 // scripts/setup-symlinks.js
 const SYMLINKS = [
     {local: 'apps/rn-app/node_modules/react-native', target: 'node_modules/react-native'},
-    {local: 'apps/rn-app/node_modules/@react-native/gradle-plugin', target: 'node_modules/@react-native/gradle-plugin'}
+    {
+        local: 'apps/rn-app/node_modules/@react-native/gradle-plugin',
+        target: 'node_modules/@react-native/gradle-plugin'
+    }
 ];
 ```
 

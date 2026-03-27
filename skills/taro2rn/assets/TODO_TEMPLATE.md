@@ -6,11 +6,11 @@
 
 ## 一、项目配置
 
-| 配置项 | 值 |
-| ------ | -- |
-| 项目名称 | {{PROJECT_NAME}} |
-| 设计稿宽度 | {{DESIGN_WIDTH}} |
-| RN 应用路径 | {{RN_APP_PATH}} |
+| 配置项       | 值                |
+| ------------ | ----------------- |
+| 项目名称     | {{PROJECT_NAME}}  |
+| 设计稿宽度   | {{DESIGN_WIDTH}}  |
+| RN 应用路径  | {{RN_APP_PATH}}   |
 | rpx 文件路径 | {{RPX_FILE_PATH}} |
 
 **转换规则**: `.claude/skills/taro2rn/core/TRANSFORM_RULES.md`
@@ -35,8 +35,8 @@
 
 ## 三、更新日志
 
-| 日期 | 更新内容 |
-| ---- | -------- |
+| 日期          | 更新内容            |
+| ------------- | ------------------- |
 | {{INIT_DATE}} | 创建 taro2rnTODO.md |
 
 ---
@@ -61,6 +61,7 @@
 ### 原生依赖
 
 安装新依赖后：
+
 ```bash
 cd {{RN_APP_PATH}}/ios && pod install
 ```
