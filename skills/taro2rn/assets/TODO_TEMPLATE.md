@@ -13,7 +13,7 @@
 | RN 应用路径  | {{RN_APP_PATH}}   |
 | rpx 文件路径 | {{RPX_FILE_PATH}} |
 
-**转换规则**: `.claude/skills/taro2rn/core/TRANSFORM_RULES.md`
+**转换规则**: `.claude/skills/taro2rn/references/TRANSFORM_RULES.md`
 
 ---
 
@@ -45,8 +45,8 @@
 
 1. 阅读本文档 → 了解项目配置和进度
 2. 认领任务 → 在任务后标注进行中
-3. 参考转换规则 → `core/TRANSFORM_RULES.md`
-4. 遇到问题 → 查阅 `core/KNOWN_ISSUES.md`
+3. 参考转换规则 → `references/TRANSFORM_RULES.md`
+4. 遇到问题 → 查阅 `references/KNOWN_ISSUES.md`(索引,按子域加载)
 5. 更新本文档 → 标记完成，添加日志
 
 ---
