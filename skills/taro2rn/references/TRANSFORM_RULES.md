@@ -12,7 +12,11 @@
 | API / 生命周期 | [api.md](api.md) | 路由、存储、网络、UI 反馈、系统信息、页面生命周期、平台代码 |
 | 样式转换 | [styles.md](styles.md) | rpx 单位、Flex 布局、文字/边框/定位、不支持的 CSS、动态宽度 |
 | IM 聊天页面 | [im-layout.md](im-layout.md) | 键盘避让、FlatList inverted、滚动监听、分页加载 |
-| 已知问题 | [KNOWN_ISSUES.md](KNOWN_ISSUES.md) | 扩展依赖、样式差异、API 差异、Monorepo 问题 |
+| 已知问题 · 依赖兼容 | [known-issues-dependencies.md](known-issues-dependencies.md) | 渐变、安全区、Picker、DatePicker、常用依赖清单 |
+| 已知问题 · 样式差异 | [known-issues-styles.md](known-issues-styles.md) | rpx 设计稿、Image、阴影、Flex 宽度、模糊效果 |
+| 已知问题 · API/键盘/React 版本 | [known-issues-api.md](known-issues-api.md) | API 差异、ScrollView 监听、IM 键盘、React 版本冲突 |
+| 已知问题 · Monorepo | [known-issues-monorepo.md](known-issues-monorepo.md) | pnpm 依赖提升、CocoaPods、Metro、Monorepo React 冲突 |
+| (旧索引,兼容) | [KNOWN_ISSUES.md](KNOWN_ISSUES.md) | 4 子域路由索引 |
 
 ## 转换速查
 
